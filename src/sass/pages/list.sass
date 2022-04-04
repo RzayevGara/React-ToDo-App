@@ -1,0 +1,36 @@
+@import "../utils/_mixins"
+@import "../utils/_extend"
+
+.box
+    @include flex(row, $align: center)
+    @include size(350px)
+    background-color: white
+    border-radius: 8px
+    margin-top: 10px
+    padding: 10px 70px 10px 40px
+    position: relative
+    transition: 0.3s
+    animation: move 0.3s
+    color: black
+    font-size: 18px
+    word-break: break-all
+    @keyframes move
+        from
+            transform: scale(0)
+        to
+            transform: scale(100%)
+    .check-btn
+        @extend .icon
+        left: 5px        
+    .close-btn
+        @extend .icon
+        right: 5px
+    .edit-btn
+        @extend .icon
+        right: 35px
+
+.checked
+    background-color: #4016a5 !important
+    color: white !important
+    text-decoration: line-through !important
+    transform: rotateX(360deg)
